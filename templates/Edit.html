@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit{% endblock title %}
+
+{% block body %}
+
+
+<div class="container">
+    <form method="POST" action="/edit_todo/{{todo_item.id}}/">
+        {% csrf_token %}
+        <div class="container">
+            <div class="mb-0">
+                <label class="form-label">Enter your new task</label>
+                <input type="text" class="form-control" id="task" name="task" placeholder={{todo_item.task}}>
+            </div>
+
+            <div class="mb-2">
+                <label for="exampleInputEmail1" class="form-label">Enter your new date</label>
+                <input type="date" class="form-control" id="date" name="date" placeholder="{{todo_item.date}}">
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+
+
+
+{% endblock body %}
+
+
+
+
+
